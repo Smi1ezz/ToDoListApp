@@ -1,0 +1,20 @@
+PODS:
+  - FSCalendar (2.8.2)
+  - SwiftLint (0.46.5)
+
+DEPENDENCIES:
+  - FSCalendar
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - FSCalendar
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  SwiftLint: 2c16e8fa99dac2e440dc0c70ea74d2532048f6cf
+
+PODFILE CHECKSUM: d6ac2a33156e2f3927f37de41ee1a2495829fd66
+
+COCOAPODS: 1.11.2

@@ -1,0 +1,7 @@
+included:
+  - ToDoListApp
+
+disabled_rules:
+  - line_length
+  - force_cast
+  - force_try
