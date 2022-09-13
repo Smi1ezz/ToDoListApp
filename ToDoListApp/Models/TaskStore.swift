@@ -1,14 +1,14 @@
 //
-//  TaskModel.swift
+//  TaskStore.swift
 //  ToDoListApp
 //
-//  Created by admin on 13.03.2022.
+//  Created by admin on 07.07.2022.
 //
 
 import Foundation
 
 protocol StoreProtocol {
-    func saveTask(task: JournalTask) -> Int
+    func saveTask(task: JournalTask)
     func fetchSortedTasks(byDate: Date) -> [JournalTask]
 }
 
@@ -43,56 +43,55 @@ struct JournalTask: Decodable, Encodable {
 
 }
 
-class MockedTaskStore: StoreProtocol {
+class TaskStore: StoreProtocol {
+    public static let shared = TaskStore()
 
-    public static let shared = MockedTaskStore()
+    private var storageDataJSON = Data()
 
-    private var mockedJSON = """
-    [
-    {
-    "id":1,
-    "dateStart":1647197228.691479,
-    "dateFinish":1647197681,
-    "name":"My task 1",
-    "description":"Описание моего дела 1"
-    },
-    {
-    "id":2,
-    "dateStart":1647397228,
-    "dateFinish":1657197681,
-    "name":"My task 2",
-    "description":"Описание моего дела 2"
-    }
-    ]
-    """.data(using: .utf8)!
-
-    private lazy var storeOfTasks = [JournalTask]()
+    private var storageOfTasks = [JournalTask]()
 
     init() {
         fetchTasks()
     }
 
-    func saveTask(task: JournalTask) -> Int {
+    private func fetchTasks() {
+
+            let userDefaults = UserDefaults.standard
+
+            guard let tasks = userDefaults.object(Data.self, with: UserDefaultsKeys.userTasks.rawValue) else {
+                print("userDef nil")
+                storageOfTasks = []
+
+                let encoder = JSONEncoder()
+                encoder.dateEncodingStrategy = .secondsSince1970
+                encoder.outputFormatting = .prettyPrinted
+                let encodedTasks = try! encoder.encode(storageOfTasks)
+                storageDataJSON = encodedTasks
+
+                userDefaults.set(object: storageDataJSON, forKey: UserDefaultsKeys.userTasks.rawValue)
+                return
+            }
+
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970 // .millisecondsSince1970
+            storageOfTasks = try! decoder.decode([JournalTask].self, from: tasks)
+            print("При получении через fetchTasks() storeOfTasks в хранилище \(storageOfTasks.count)")
+
+    }
+
+    func saveTask(task: JournalTask) {
         let id = Int.random(in: 0...10000)
 
         let task = JournalTask(id: id, task: task)
-        storeOfTasks.append(task)
+        storageOfTasks.append(task)
 
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .secondsSince1970
         encoder.outputFormatting = .prettyPrinted
-        let encodedTasks = try! encoder.encode(storeOfTasks)
-        mockedJSON = encodedTasks
+        let encodedTasks = try! encoder.encode(storageOfTasks)
+        storageDataJSON = encodedTasks
 
-        return id
-    }
-
-    private func fetchTasks() {
-
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .secondsSince1970 // .millisecondsSince1970
-        self.storeOfTasks = try! decoder.decode([JournalTask].self, from: mockedJSON)
-        print("При получении массива через fetchTasks() storeOfTasks в хранилище \(storeOfTasks.count)")
+        UserDefaults.standard.set(object: storageDataJSON, forKey: UserDefaultsKeys.userTasks.rawValue)
     }
 
     func fetchSortedTasks(byDate: Date) -> [JournalTask] {
@@ -101,7 +100,7 @@ class MockedTaskStore: StoreProtocol {
         dateFormatter.timeZone = .current
         dateFormatter.dateFormat = "dd-MM-yyyy"
 
-        for task in storeOfTasks {
+        for task in storageOfTasks {
             let stringFromTaskDate = dateFormatter.string(from: task.dateStart)
             let stringFromSelectedDate = dateFormatter.string(from: byDate)
 

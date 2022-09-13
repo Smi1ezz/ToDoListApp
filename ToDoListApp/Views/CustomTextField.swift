@@ -46,7 +46,8 @@ class CustomTextField: UITextField {
 
     }
 
-    @objc func dateChanged(_ sender: UIDatePicker) {
+    @objc
+    func dateChanged(_ sender: UIDatePicker) {
         text = formatResult?(sender.date)
     }
 }

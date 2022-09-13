@@ -9,7 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    private var taskStore: StoreProtocol = MockedTaskStore.shared
+    private var taskStore: StoreProtocol = TaskStore.shared
+
     private let router = Router(naviVC: nil)
     private lazy var selectedDate = Date()
     private lazy var sortedTasksArray = [JournalTask]()
@@ -28,6 +29,7 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         print("обновляем таблицу MainViewController")
+        calendarView.reloadData()
         self.reloadDataOnController()
     }
 
@@ -48,7 +50,6 @@ extension MainViewController: UITableViewDelegate {
 
         print("view task info")
         let cell = tableView.cellForRow(at: indexPath) as! ToDoCell
-//        cell.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
         guard let name = cell.nameLabel.text else { return }
 
@@ -57,7 +58,6 @@ extension MainViewController: UITableViewDelegate {
         router.naviVC = self.navigationController
 
         let task = sortedTasksArray.first(where: {
-//            guard let cellName = cell.nameLabel.text else { return false }
             return $0.name == name
         })
 
@@ -89,6 +89,10 @@ extension MainViewController: FSCalendarDelegate {
 
         selectedDate = date
         reloadDataOnController()
+    }
+
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return taskStore.fetchSortedTasks(byDate: date).count
     }
 }
 

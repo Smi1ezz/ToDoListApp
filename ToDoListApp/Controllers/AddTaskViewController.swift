@@ -9,19 +9,20 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
-    enum VCState {
+    enum InfoViewControllerState {
         case create
         case info
     }
 
     private lazy var newTask = JournalTask()
-    var viewControllerState: VCState = .create
+    var viewControllerState: InfoViewControllerState = .create
 
     private let nameTextField: CustomTextField = {
         let name = CustomTextField()
         name.layer.borderWidth = 1
         name.layer.borderColor = UIColor.black.cgColor
         name.layer.cornerRadius = 10
+        name.backgroundColor = .white
         name.tintColor = .blue
         name.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return name
@@ -29,6 +30,7 @@ class AddTaskViewController: UIViewController {
 
     private let dateTextField: CustomTextField = {
        let date = CustomTextField()
+        date.backgroundColor = .white
         date.layer.borderWidth = 1
         date.layer.borderColor = UIColor.black.cgColor
         date.layer.cornerRadius = 10
@@ -37,6 +39,7 @@ class AddTaskViewController: UIViewController {
 
     private let timeTextField: CustomTextField = {
          let time = CustomTextField()
+         time.backgroundColor = .white
          time.layer.borderWidth = 1
          time.layer.borderColor = UIColor.black.cgColor
          time.layer.cornerRadius = 10
@@ -81,7 +84,7 @@ class AddTaskViewController: UIViewController {
 
         if viewControllerState == .create {
             self.title = "Создать задачу"
-            view.backgroundColor = .cyan
+            view.backgroundColor = .white
 
             for item in [nameTextField, dateTextField, timeTextField, descriptionTextView] {
                 item.isUserInteractionEnabled = true
@@ -119,7 +122,7 @@ class AddTaskViewController: UIViewController {
 
         } else if viewControllerState == .info {
             self.title = "Подробности"
-            view.backgroundColor = .yellow
+            view.backgroundColor = .white
 
             for item in [nameTextField, dateTextField, timeTextField, descriptionTextView] {
                 item.isUserInteractionEnabled = false
@@ -131,6 +134,7 @@ class AddTaskViewController: UIViewController {
             descriptionTextView.text = "нет описания"
 
             saveButton.setTitle("Назад", for: .normal)
+            saveButton.backgroundColor = .red
             saveButton.removeTarget(nil, action: #selector(backButtonAction), for: .touchUpInside)
             saveButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
 
@@ -228,7 +232,7 @@ class AddTaskViewController: UIViewController {
         newTask.dateFinish = newTask.dateStart + 3600
         newTask.description = descriptionTextView.text
 
-        MockedTaskStore.shared.saveTask(task: newTask)
+        TaskStore.shared.saveTask(task: newTask)
 
         print("добавлена задача \(newTask.name), на дату \(newTask.dateStart)")
 

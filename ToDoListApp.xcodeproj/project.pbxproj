@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8423362F28D0C2D4004C6D8D /* UserDefExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8423362E28D0C2D4004C6D8D /* UserDefExt.swift */; };
 		84653B8C27DDDCF000A6B8FF /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653B8A27DDDCF000A6B8FF /* ToDoCell.swift */; };
 		84653B8D27DDDCF000A6B8FF /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84653B8B27DDDCF000A6B8FF /* ToDoCell.xib */; };
-		84653B9327DE034500A6B8FF /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653B9227DE034500A6B8FF /* TaskModel.swift */; };
 		84653B9527DE2EC900A6B8FF /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653B9427DE2EC900A6B8FF /* AddTaskViewController.swift */; };
 		84653B9727DE30A300A6B8FF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653B9627DE30A300A6B8FF /* Router.swift */; };
-		84653BBB27DF300E00A6B8FF /* DateTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84653BBA27DF300E00A6B8FF /* DateTextFieldExtension.swift */; };
+		846EDD4B2876BF01002B870B /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EDD4A2876BF01002B870B /* TaskStore.swift */; };
 		849ED42227DA311400CAFCA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ED42127DA311400CAFCA6 /* AppDelegate.swift */; };
 		849ED42427DA311400CAFCA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ED42327DA311400CAFCA6 /* SceneDelegate.swift */; };
 		849ED42627DA311400CAFCA6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ED42527DA311400CAFCA6 /* MainViewController.swift */; };
@@ -23,7 +23,6 @@
 		849ED44327DA311600CAFCA6 /* ToDoListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ED44227DA311600CAFCA6 /* ToDoListAppUITests.swift */; };
 		849ED44527DA311600CAFCA6 /* ToDoListAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849ED44427DA311600CAFCA6 /* ToDoListAppUITestsLaunchTests.swift */; };
 		84EB82F127F1978D00143EF4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB82F027F1978D00143EF4 /* CustomTextField.swift */; };
-		84EB82F327F1DE3500143EF4 /* InfoViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB82F227F1DE3500143EF4 /* InfoViewControllerState.swift */; };
 		8C8763A9CAF21C6CB8490E91 /* Pods_ToDoListApp_ToDoListAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F15B7F5A216247DB8474FB /* Pods_ToDoListApp_ToDoListAppUITests.framework */; };
 		A50FAA72073A24A4C6B58EF6 /* Pods_ToDoListApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCBBCA9E3014B690C7217BBF /* Pods_ToDoListApp.framework */; };
 		F7F3B942258580BD320DA37F /* Pods_ToDoListAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31063DE262EB173FE38DF21F /* Pods_ToDoListAppTests.framework */; };
@@ -50,12 +49,12 @@
 		1917D54D6BFBA118155F032D /* Pods-ToDoListAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoListAppTests/Pods-ToDoListAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		31063DE262EB173FE38DF21F /* Pods_ToDoListAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D02B385C71B135877503D6D /* Pods-ToDoListApp-ToDoListAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListApp-ToDoListAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ToDoListApp-ToDoListAppUITests/Pods-ToDoListApp-ToDoListAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8423362E28D0C2D4004C6D8D /* UserDefExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefExt.swift; sourceTree = "<group>"; };
 		84653B8A27DDDCF000A6B8FF /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		84653B8B27DDDCF000A6B8FF /* ToDoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
-		84653B9227DE034500A6B8FF /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		84653B9427DE2EC900A6B8FF /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		84653B9627DE30A300A6B8FF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		84653BBA27DF300E00A6B8FF /* DateTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextFieldExtension.swift; sourceTree = "<group>"; };
+		846EDD4A2876BF01002B870B /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		849ED41E27DA311400CAFCA6 /* ToDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849ED42127DA311400CAFCA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849ED42327DA311400CAFCA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 		849ED44227DA311600CAFCA6 /* ToDoListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListAppUITests.swift; sourceTree = "<group>"; };
 		849ED44427DA311600CAFCA6 /* ToDoListAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84EB82F027F1978D00143EF4 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		84EB82F227F1DE3500143EF4 /* InfoViewControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewControllerState.swift; sourceTree = "<group>"; };
 		A9F15B7F5A216247DB8474FB /* Pods_ToDoListApp_ToDoListAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListApp_ToDoListAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66440831C340131E549548A /* Pods-ToDoListAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListAppTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoListAppTests/Pods-ToDoListAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CCBBCA9E3014B690C7217BBF /* Pods_ToDoListApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,8 +121,7 @@
 		84653BB927DF2FDF00A6B8FF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				84653BBA27DF300E00A6B8FF /* DateTextFieldExtension.swift */,
-				84EB82F227F1DE3500143EF4 /* InfoViewControllerState.swift */,
+				8423362E28D0C2D4004C6D8D /* UserDefExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,7 +186,7 @@
 		849ED4EA27DB1C8E00CAFCA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				84653B9227DE034500A6B8FF /* TaskModel.swift */,
+				846EDD4A2876BF01002B870B /* TaskStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,9 +194,9 @@
 		849ED4EB27DB1C9F00CAFCA6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84EB82F027F1978D00143EF4 /* CustomTextField.swift */,
 				84653B8A27DDDCF000A6B8FF /* ToDoCell.swift */,
 				84653B8B27DDDCF000A6B8FF /* ToDoCell.xib */,
-				84EB82F027F1978D00143EF4 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,14 +479,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84653B9727DE30A300A6B8FF /* Router.swift in Sources */,
-				84653B9327DE034500A6B8FF /* TaskModel.swift in Sources */,
+				846EDD4B2876BF01002B870B /* TaskStore.swift in Sources */,
 				84EB82F127F1978D00143EF4 /* CustomTextField.swift in Sources */,
 				849ED42627DA311400CAFCA6 /* MainViewController.swift in Sources */,
 				849ED42227DA311400CAFCA6 /* AppDelegate.swift in Sources */,
 				849ED42427DA311400CAFCA6 /* SceneDelegate.swift in Sources */,
-				84653BBB27DF300E00A6B8FF /* DateTextFieldExtension.swift in Sources */,
 				84653B8C27DDDCF000A6B8FF /* ToDoCell.swift in Sources */,
-				84EB82F327F1DE3500143EF4 /* InfoViewControllerState.swift in Sources */,
+				8423362F28D0C2D4004C6D8D /* UserDefExt.swift in Sources */,
 				84653B9527DE2EC900A6B8FF /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
